@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/sriramrudraraju/fed-take-home/static/css/main.a83e5236.chunk.css",
+    "main.js": "/sriramrudraraju/fed-take-home/static/js/main.42ae3e94.chunk.js",
+    "main.js.map": "/sriramrudraraju/fed-take-home/static/js/main.42ae3e94.chunk.js.map",
+    "runtime-main.js": "/sriramrudraraju/fed-take-home/static/js/runtime-main.7864a498.js",
+    "runtime-main.js.map": "/sriramrudraraju/fed-take-home/static/js/runtime-main.7864a498.js.map",
+    "static/js/2.4e9f3db3.chunk.js": "/sriramrudraraju/fed-take-home/static/js/2.4e9f3db3.chunk.js",
+    "static/js/2.4e9f3db3.chunk.js.map": "/sriramrudraraju/fed-take-home/static/js/2.4e9f3db3.chunk.js.map",
+    "index.html": "/sriramrudraraju/fed-take-home/index.html",
+    "precache-manifest.ee7feeb7191dc3e0b625456284ae282d.js": "/sriramrudraraju/fed-take-home/precache-manifest.ee7feeb7191dc3e0b625456284ae282d.js",
+    "service-worker.js": "/sriramrudraraju/fed-take-home/service-worker.js",
+    "static/css/main.a83e5236.chunk.css.map": "/sriramrudraraju/fed-take-home/static/css/main.a83e5236.chunk.css.map",
+    "static/js/2.4e9f3db3.chunk.js.LICENSE": "/sriramrudraraju/fed-take-home/static/js/2.4e9f3db3.chunk.js.LICENSE",
+    "static/media/stanger-things_raw.png": "/sriramrudraraju/fed-take-home/static/media/stanger-things_raw.bd72fcdd.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.7864a498.js",
+    "static/js/2.4e9f3db3.chunk.js",
+    "static/css/main.a83e5236.chunk.css",
+    "static/js/main.42ae3e94.chunk.js"
+  ]
+}
