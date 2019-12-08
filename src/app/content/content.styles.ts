@@ -10,7 +10,7 @@ export const useStyles = makeStyles((theme: Theme) => ({
   },
   mainImage: {
     width: 'calc(40% - 32px)',
-    height: 542,
+    height: 628,
     padding: theme.spacing(2),
     [theme.breakpoints.down('sm')]: {
       width: '100%',

@@ -2,8 +2,7 @@ import { makeStyles, Theme } from '@material-ui/core/styles';
 
 export const useStyles = makeStyles((theme: Theme) => ({
   root: {
-    maxHeight: 380,
-    overflowY: 'scroll'
+    
   },
   listItem: {
     marginTop: theme.spacing(0.5),

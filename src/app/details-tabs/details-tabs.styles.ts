@@ -11,6 +11,8 @@ export const useStyles = makeStyles((theme: Theme) => ({
       paddingTop: theme.spacing(0.25),
       paddingBottom: theme.spacing(0.25),
       backgroundColor: theme.palette.primary.light,
+      maxHeight: 466,
+      overflowY: 'scroll',
     }
   }
 }));
