@@ -3,16 +3,16 @@ import Card from '@material-ui/core/Card';
 import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
 
-import * as data from '../../data/en_US.json';
+import { useData } from '../../data';
 
 import { useStyles } from './gallery.styles';
 
 export const Gallery = () => {
   const classes = useStyles();
-
+  const data = useData();
   return (
     <div className={classes.root}>
-      {data["gallery"].map((list) => (
+      {data["gallery"].map((list: {src: string; text: string}) => (
         <Card className={classes.card} key={list.text}>
           <CardMedia
             className={classes.media}

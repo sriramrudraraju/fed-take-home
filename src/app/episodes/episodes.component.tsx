@@ -4,17 +4,17 @@ import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 
-import * as data from '../../data/en_US.json';
+import { useData } from '../../data';
 
 import { useStyles } from './episodes.styles';
 
 export const Episodes = () => {
   const classes = useStyles();
-
+  const data = useData();
   return (
     <div className={classes.root}>
       <List component="nav" aria-label="secondary mailbox folders">
-      { data["episode-list"].map((list) => (
+      { data["episode-list"].map((list: {name: string; rating: string; season: string}) => (
         <ListItem alignItems="flex-start" button key={list.name} className={classes.listItem}>
         <ListItemText
           primary={list.name}

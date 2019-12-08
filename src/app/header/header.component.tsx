@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC } from 'react';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
@@ -14,13 +14,19 @@ import MoreIcon from '@material-ui/icons/MoreVert';
 
 import { useStyles } from './header.styles';
 
-export const Header = () => {
+interface HeaderProps {
+  setLang: (lan: 'en' | 'la') => void;
+}
+
+export const Header: FC<HeaderProps> = ({setLang}) => {
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState<null | HTMLElement>(null);
+  const [langAnchorEl, setLangAnchorEl] = React.useState<null | HTMLElement>(null); 
 
   const isMenuOpen = Boolean(anchorEl);
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
+  const isLangMenuOpen = Boolean(langAnchorEl);
 
   const handleProfileMenuOpen = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorEl(event.currentTarget);
@@ -30,6 +36,13 @@ export const Header = () => {
     setMobileMoreAnchorEl(null);
   };
 
+  const handleLangMenuClose = (lang?: 'en' | 'la') => {
+    if(lang) {
+      setLang(lang);
+    }
+    setLangAnchorEl(null);
+  };
+
   const handleMenuClose = () => {
     setAnchorEl(null);
     handleMobileMenuClose();
@@ -37,6 +50,10 @@ export const Header = () => {
 
   const handleMobileMenuOpen = (event: React.MouseEvent<HTMLElement>) => {
     setMobileMoreAnchorEl(event.currentTarget);
+  };
+
+  const handleLangMenuOpen = (event: React.MouseEvent<HTMLElement>) => {
+    setLangAnchorEl(event.currentTarget);
   };
 
   const menuId = 'primary-search-account-menu';
@@ -52,6 +69,7 @@ export const Header = () => {
     >
       <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
       <MenuItem onClick={handleMenuClose}>My account</MenuItem>
+      <MenuItem onClick={handleLangMenuOpen}>Language</MenuItem>
     </Menu>
   );
 
@@ -85,6 +103,22 @@ export const Header = () => {
         </IconButton>
         <p>Profile</p>
       </MenuItem>
+    </Menu>
+  );
+
+  const renderLangMenu = (
+    <Menu
+      anchorEl={langAnchorEl}
+      anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
+      id={menuId}
+      keepMounted
+      transformOrigin={{ vertical: 'top', horizontal: 'right' }}
+      open={isLangMenuOpen}
+      onClose={() => handleLangMenuClose()}
+    >
+      <MenuItem onClick={() => handleLangMenuClose('en')}>English</MenuItem>
+      <MenuItem onClick={() => handleLangMenuClose('la')}>Latin</MenuItem>
+      
     </Menu>
   );
 
@@ -141,6 +175,7 @@ export const Header = () => {
       </AppBar>
       {renderMobileMenu}
       {renderMenu}
+      {renderLangMenu}
     </div>
   );
 }
